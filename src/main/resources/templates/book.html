@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form enctype="multipart/form-data" method="post" th:action="@{/book/Insert}">
+        <table border="1" align="center">
+
+            <tr>
+                <td>编号</td>
+                <td>
+                    <input type="text" name="bid"/>
+                </td>
+            </tr>
+            <tr>
+                <td>名称</td>
+                <td>
+                    <input type="text" name="name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>作者</td>
+                <td>
+                    <input type="text" name="auto"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>单价</td>
+                <td>
+                    <input type="text" name="price"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>正面</td>
+                <td>
+                    <input type="file" name="file"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>反面</td>
+                <td>
+                    <input type="file" name="file"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="添加"/>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+</body>
+</html>

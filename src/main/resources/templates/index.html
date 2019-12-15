@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="\static\Bootstrap3.3.4\bootstrap\3.3.4\css\bootstrap.min.css">
+    <script type="text/javascript" src="\static\Bootstrap3.3.4\jquery\jquery-3.1.1.js"></script>
+    <script type="text/javascript"src="\static\Bootstrap3.3.4\bootstrap\3.3.4\js\bootstrap.min.js"></script>
+
+    <!--<script type="text/javascript">-->
+
+        <!--$(function () {-->
+        <!--})-->
+
+        <!--function show() {-->
+            <!--$.ajax({-->
+                <!--url:"/dept/dept_show",-->
+                <!--type:"post",-->
+                <!--success:function (data) {-->
+                <!--// //    清空原有option选项-->
+                 <!--for (var i=0;i<data.length;i++)-->
+                 <!--{-->
+                     <!--$("#did").get(0).options.add(new Option(data[i].dname,data[i].did));-->
+                 <!--}-->
+                <!--}-->
+            <!--})-->
+            <!--//二级联动-->
+            <!--$("#did").change(function () {-->
+                <!--var dept=$(this).val();//获取当前选择的部门-->
+                <!--if(dept!="" || dept!=0)-->
+                <!--{-->
+                    <!--$("#pid").get(0).length=0;-->
+                    <!--$.ajax({-->
+                        <!--url:"/dept/pos_show",-->
+                        <!--type:"post",-->
+                        <!--data:{did:dept},-->
+                        <!--success:function (data) {-->
+                            <!--//清空原先有的option选项-->
+                            <!--for (var i=0;i<data.length;i++)-->
+                            <!--{-->
+                                <!--//.get(0)是获取原生的DOM对象-->
+                                <!--//只有原生对象才有.option属性-->
+                                <!--$("#pid").get(0).options.add(new Option(data[i].pname,data[i].pid));-->
+                            <!--}-->
+                        <!--}-->
+                    <!--})-->
+                <!--}-->
+                <!--else-->
+                <!--{-->
+                    <!--$("#pid").get(0).options.add(new Option("&#45;&#45;请选择&#45;&#45;",0))-->
+                <!--}-->
+            <!--})-->
+        <!--}-->
+
+    <!--</script>-->
+</head>
+<body>
+
+<!--<table border="1px solid red" align="center">-->
+
+    <!--<tr>-->
+        <!--<td>-->
+            <!--<span class="glyphicon glyphicon-off" aria-hidden="true"></span>-->
+            <!--<button>注销awdawdawd</button>-->
+
+        <!--</td>-->
+    <!--</tr>-->
+
+<!--</table>-->
+
+
+<form action="/dept/insert1" method="post" enctype="multipart/form-data">
+<!--下拉框-->
+    <table border="1px solid red" align="center">
+        <tr>
+            <td>部门</td>
+            <td>
+                <select class="form-control" id="did" name="did">
+                    <option value="0">--请选择--</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>职位</td>
+            <td>
+                <select class="form-control" id="pid" name="pid">
+                    <option value="0">--请选择--</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>文件</td>
+            <td>
+                <input type="file" name="file" multiple/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+               <button type="submit">提交</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
